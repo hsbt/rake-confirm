@@ -1,12 +1,14 @@
 # Rake::Confirm
 
-TODO: Write a gem description
+ confirmation for destructive Rails task. example for db:drop.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'rake-confirm'
+    group :production do
+      gem 'rake-confirm'
+    end
 
 And then execute:
 
@@ -18,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+ * Custom configuration
 
 ## Contributing
 
