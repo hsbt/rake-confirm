@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "rake-confirm"
   gem.require_paths = ["lib"]
   gem.version       = Rake::Confirm::VERSION
+
+  gem.add_dependency 'rake', ['>= 0']
+  gem.add_development_dependency 'rspec', ['>= 0']
 end
