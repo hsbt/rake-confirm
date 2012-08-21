@@ -5,10 +5,6 @@ task :confirm do
   abort if ask.downcase != Rails.root.basename.to_s
 end
 
-%w(db:drop db:fixtures:load db:rollback db:migrate db:schema:load db:seed db:setup).each do |name|
-  Rake::Task[name].enhance([:confirm])
-end
-
 # https://github.com/heroku/heroku/blob/master/lib/heroku/helpers.rb
 def ask
   $stdin.gets.to_s.strip

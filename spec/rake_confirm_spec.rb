@@ -10,13 +10,6 @@ describe "Rake::Confirm" do
     let(:not_confirmed_tasks){ %w(db:create db:migrate:status db:schema:dump db:structure:dump db:version) }
 
     before(:each) do
-      # stub for rake/confirm.rb
-      module Rails
-        class Railtie
-          ::Rails::Railtie.stub!(:rake_tasks)
-        end
-      end
-
       # # inject dummy tasks
       confirmed_tasks.each do |t|
         Rake::Task.define_task(t)
@@ -28,7 +21,7 @@ describe "Rake::Confirm" do
 
       # delayed loading because 'task' is evaluated before stubbing
       require 'rake-confirm'
-      load File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'rake', 'confirm', 'tasks', 'confirm.rake'))
+      load "rake/confirm/tasks/rails/confirm.rake"
     end
 
     @confirmed_tasks.each do |t|
