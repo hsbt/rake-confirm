@@ -1,1 +1,2 @@
-require "rake/confirm"
+require 'rake'
+require 'rake/confirm'
